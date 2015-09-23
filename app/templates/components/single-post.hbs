@@ -1,0 +1,13 @@
+<h2>{{post.title}}</h2>
+{{post.author}}
+<p>
+  {{post.body}}
+</p>
+{{add-comment post=post saveComment='saveComment'}}
+{{#each post.comments as |comment|}}
+<p>
+  comment:
+</p>
+{{comment.body}}
+
+{{/each}}

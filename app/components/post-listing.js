@@ -5,7 +5,6 @@ export default Ember.Component.extend({
   sortedByDatePosts: Ember.computed.sort('posts', 'sortByDate'),
   actions: {
     update(post, params) {
-      debugger;
       this.sendAction('update', post, params);
     },
     destroyPost(post) {
