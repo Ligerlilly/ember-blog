@@ -1,4 +1,3 @@
+{{post-new save='save'}}
 
-{{#each model as |post|}}
-  {{post-tile post=post}}
-{{/each}}
+{{post-listing update='update' posts=model destroyPost='destroyPost'}}

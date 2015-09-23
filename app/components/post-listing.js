@@ -1,15 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  sortByDate: ['createdAt:desc'],
+  sortedByDatePosts: Ember.computed.sort('posts', 'sortByDate'),
   actions: {
     update(post, params) {
       debugger;
       this.sendAction('update', post, params);
     },
-    delete(post) {
-      if(confirm('Are you sure')) {
-        this.sendAction('destroyPost', post);
-      }
+    destroyPost(post) {
+      this.sendAction('destroyPost', post);
+
     }
   }
 });
