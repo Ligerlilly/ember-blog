@@ -7,7 +7,6 @@ export default Ember.Component.extend({
       this.set('newComment', true);
     },
     saveComment: function() {
-      debugger
       var params = {
         post: this.get('post'),
         author: this.get('author'),

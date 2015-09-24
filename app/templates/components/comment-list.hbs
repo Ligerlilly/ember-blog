@@ -1,0 +1,10 @@
+{{post.author}}
+{{#each post.comments as |comment|}}
+<p>
+  {{comment.author}} - {{comment.createdAt}} - <a {{action 'deleteComment' comment}}>Delete</a>
+</p>
+<p>
+{{comment.body}}
+</p>
+
+{{/each}}

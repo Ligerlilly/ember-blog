@@ -3,14 +3,14 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model(params) {
     return this.store.findRecord('post', params.post_id);
-
   },
   actions: {
     saveComment(params) {
-      debugger
       var newComment = this.store.createRecord('comment', params);
       newComment.save();
+      params.post.save();
       this.transitionTo('post');
+      window.location.reload();
     },
     update: function(post, params) {
       Object.keys(params).forEach(function(key) {
@@ -24,6 +24,10 @@ export default Ember.Route.extend({
     destroyPost(post) {
       post.destroyRecord();
       this.transitionTo('index');
+    },
+    deleteComment: function(comment) {
+      comment.destroyRecord();
+      this.transitionTo('post');
     }
   }
 });

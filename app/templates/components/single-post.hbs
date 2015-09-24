@@ -4,10 +4,5 @@
   {{post.body}}
 </p>
 {{add-comment post=post saveComment='saveComment'}}
-{{#each post.comments as |comment|}}
-<p>
-  comment:
-</p>
-{{comment.body}}
-
-{{/each}}
+<h4>Comments:</h4>
+{{comment-list post=post deleteComment="deleteComment"}}
