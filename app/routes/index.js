@@ -28,6 +28,19 @@ export default Ember.Route.extend({
       post.destroyRecord();
       //  debugger
       this.transitionTo('index');
+    },
+    login(params) {
+      var id;
+      var context = this;
+      this.store.findAll('user').then(function(users) {
+        users.forEach(function(user) {
+          if(user.get('firstName') === params.firstName) {
+            // debugger
+             id = user.id;
+             context.transitionTo('user', id);
+          }
+        });
+      });
     }
   }
 });

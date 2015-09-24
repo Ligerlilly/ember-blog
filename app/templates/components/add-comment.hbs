@@ -1,8 +1,11 @@
 {{#if newComment}}
   <form>
+    {{#unless post.user}}
     <div class="form-group">
       {{input value=user id='user' class='form-control' placeholder='Enter Name:'}}
     </div>
+    {{/unless}}
+
     <div class="form-group">
       {{textarea value=body id='body' class='form-control' placeholder='Enter Comment:'}}
     </div>
