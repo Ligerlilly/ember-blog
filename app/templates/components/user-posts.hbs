@@ -1,5 +1,29 @@
+
+<div class="container">
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>
+        Title
+      </th>
+      <th>
+        Date Created
+      </th>
+    </tr>
+  </thead>
 {{#each user.posts as |post|}}
-  {{#link-to 'post'}}
-    {{post.title}} - {{post.createdAt}}
-  {{/link-to}}
-{{/each}}
+
+    <tbody>
+      <tr>
+        <td>
+          {{#link-to 'post' post.id}} {{post.title}} {{/link-to}}
+        </td>
+        <td>
+          {{moment-from-now post.createdAt}}
+        </td>
+      </tr>
+    </tbody>
+    {{/each}}
+</table>
+</div>

@@ -3,11 +3,11 @@
   <div class="title">
 
     {{#link-to 'post' post.id}}<h2>{{post.title}}</h2>{{/link-to}}
-    <p>user: {{post.user}} created: {{moment-from-now post.createdAt}} {{post-update post=post update="update"}}</p>
+    <p>user: {{#link-to 'user' post.user.id}}{{full-name post.user}}{{/link-to}} created: {{moment-from-now post.createdAt}} {{post-update post=post update="update"}}</p>
   </div>
   <div class="body">
     {{post.body}}
   </div>
-  <a href="#" {{action 'delete' post}}>delete</a>
+  <a {{action 'delete' post}}>delete</a>
 
 </div>

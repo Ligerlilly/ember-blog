@@ -9,6 +9,7 @@ export default Ember.Route.extend({
       var newComment = this.store.createRecord('comment', params);
       newComment.save();
       params.post.save();
+      params.user.save();
       this.transitionTo('post');
       window.location.reload();
     },

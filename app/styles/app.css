@@ -5,3 +5,7 @@
 .update-link {
   display: inline;
 }
+
+a:hover {
+  cursor: pointer;
+}

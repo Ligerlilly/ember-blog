@@ -1,7 +1,6 @@
-{{post.user}}
 {{#each post.comments as |comment|}}
 <p>
-  {{comment.user}} - {{comment.createdAt}} - <a {{action 'deleteComment' comment}}>Delete</a>
+  {{full-name comment.post.user}} - {{moment-from-now comment.createdAt}} - <a {{action 'deleteComment' comment}}>Delete</a>
 </p>
 <p>
 {{comment.body}}
