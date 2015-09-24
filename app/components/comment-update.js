@@ -9,7 +9,7 @@ export default Ember.Component.extend({
     updateComment: function(comment) {
       var params = {
         post: this.get('post'),
-        author: this.get('author'),
+        user: this.get('user'),
         body: this.get('body'),
         createdAt: comment.get('createdAt'),
         updatedAt: new Date()

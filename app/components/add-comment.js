@@ -9,7 +9,7 @@ export default Ember.Component.extend({
     saveComment: function() {
       var params = {
         post: this.get('post'),
-        author: this.get('author'),
+        user: this.get('user'),
         body: this.get('body'),
         createdAt: new Date(),
         updatedAt: ""
