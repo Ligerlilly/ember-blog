@@ -1,0 +1,5 @@
+{{#each user.posts as |post|}}
+  {{#link-to 'post'}}
+    {{post.title}} - {{post.createdAt}}
+  {{/link-to}}
+{{/each}}

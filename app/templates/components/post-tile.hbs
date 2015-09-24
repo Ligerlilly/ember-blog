@@ -3,7 +3,7 @@
   <div class="title">
 
     {{#link-to 'post' post.id}}<h2>{{post.title}}</h2>{{/link-to}}
-    <p>user: {{post.user}} created: {{post.createdAt}} {{post-update post=post update="update"}}</p>
+    <p>user: {{post.user}} created: {{moment-from-now post.createdAt}} {{post-update post=post update="update"}}</p>
   </div>
   <div class="body">
     {{post.body}}
