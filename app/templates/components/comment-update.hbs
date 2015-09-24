@@ -1,0 +1,13 @@
+{{#if editComment}}
+  <form>
+    <div class="form-group">
+      {{input value=author id='author' class='form-control' placeholder='Enter Name:'}}
+    </div>
+    <div class="form-group">
+      {{textarea value=body id='body' class='form-control' placeholder='Enter Comment:'}}
+    </div>
+    <button {{action 'updateComment' comment}}>Update</button>
+  </form>
+{{else}}
+ <button {{action 'updateCommentForm'}}>Update Comment</button>
+{{/if}}
